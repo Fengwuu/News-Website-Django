@@ -1,0 +1,51 @@
+body{
+    background-color: #FFEFD5;
+    display: block;
+    margin-left: auto
+    margin-right: auto
+    position: absolute
+}
+.card-header{
+    height: 40px;
+}
+.card{
+    width: 1300px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+.list-group{
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0;
+    padding: 4px;
+    text-align: center;
+    border-radius: 20px;
+    display: inline;
+}
+.list-group-item{
+    margin: 0 5px;
+    border-radius: 20px;
+    display: inline;
+    margin-right: 5px;
+    padding: 0.78% 5%;
+}
+.card-footer{
+     text-align: right;
+}
+.btn{
+color: white;
+Float: right;
+Margin: 0 4px;
+}
+.pagination{
+Float: right;
+Margin: 0 4px;
+}
+.form-control{
+    width: 500px;
+    margin: auto;
+
+}
+.row{
+     text-align: center;
+}

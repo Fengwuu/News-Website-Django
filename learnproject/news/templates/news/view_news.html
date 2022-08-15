@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}
+{{news_item.title}} ::{{block.super}}
+{%endblock%}
+{%block sidebar%}
+{%include 'inc/_sidebar.html'%}
+{%endblock%}
+{%block content%}
+<div class="card mb-3">
+    <div class="card-header">
+        Категория : <a href="{{news_item.category.get_absolute_url}}"> {{news_item.category}}</a>
+    </div>
+    <div class="card-body">
+        <div class="media">
+            {% if news_item.photo %}
+            <img src="{{news_item.photo.url}}" alt=" "width="640" height="360" class="mr-3">
+            {%else %}
+            <img src="media/photos/added_photos/photo_2022-07-16_12-31-35.jpg" alt="" width="350" class="mr-3">
+            {%endif%}
+
+            <div class="media-body mt-4">
+                <h5 class="card-title">{{news_item.title}}</h5>
+                <p class="card-text">{{news_item.content|safe|linebreaks}}</p>
+            </div>
+            <a href="/#" class="btn btn-primary">Вернуться на главную</a>
+             <a href="/cat/{{news_item.category_id}}" class="btn btn-primary">Перейти к новостям из категории</a>
+        </div>
+    </div>
+    <div class="card-footer text-muted">
+        {{ news_item.created_date|date:"Y-m-d H:i"}}
+    </div>
+</div>
+{%endblock%}

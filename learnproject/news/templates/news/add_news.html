@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}
+Добавление новости ::{{block.super}}
+{%endblock%}
+{%block content%}
+<h1>Добавление новости</h1>
+<form action="{% url 'add_news' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+        <button type="submit" class="btn btn-primary btn-block">Отправить новость</button>
+</form>
+{%endblock%}

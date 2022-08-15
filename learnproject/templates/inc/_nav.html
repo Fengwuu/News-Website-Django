@@ -1,0 +1,38 @@
+{% load news_tags%}
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="https://linktr.ee/fengwuu">Contact me</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  mb-2 mb-lg-0">
+
+                <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Главная страница</a></li>
+
+                {% if request.superuser.is_authenticated %}
+                <li class="nav-item"><a class="nav-link" href="exit/">Выход</a></li>
+                <li class="nav-item"><a class="nav-link" href="/add_news">Добавить новость</a></li>
+
+                {% elif request.user|has_group:"Journalists" %}
+                <li class="nav-item"><a class="nav-link" href="/add_news">Добавить новость</a></li>
+                <li class="nav-item"><a class="nav-link" href="exit/">Выход</a></li>
+
+                {% elif request.user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link" href="/for_jour/">Вы журналист?</a></li>
+                <li class="nav-item"><a class="nav-link disabled">Добро пожаловать, {{user.username}}</a></li>
+                <li class="nav-item"><a class="nav-link" href="exit/">Выход</a></li>
+
+
+                {% else %}
+                <li class="nav-item"><a class="nav-link" href="/login">Вход</a></li>
+                <li class="nav-item"><a class="nav-link" href="/register">Регистрация</a></li>
+
+                {% endif %}
+
+            </ul>
+        </div>
+    </div>
+</nav> <!--Top-site buttons made in this
+separate file because of DRY (don't repeat yourself) concepts -->

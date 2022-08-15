@@ -1,0 +1,30 @@
+body{
+    background-color: #FFEFD5;
+    display: block;
+    margin-left: auto
+    margin-right: auto
+    position: absolute
+}
+
+.list-group-item{
+    margin: 0 5px;
+    border-radius: 20px;
+    display: inline;
+    margin-right: 5px;
+    padding: 0.78% 5%;
+}
+
+.btn{
+color: white;
+Float: right;
+Margin: 0 4px;
+}
+
+.form-control{
+    width: 500px;
+    margin: auto;
+
+}
+.row{
+     text-align: center;
+}
